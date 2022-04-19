@@ -1,3 +1,7 @@
 AJAX :-
 It stands for Asynchronous Javascript and XML. 
 AJAX is a new technique ofr creating better, faster and more interactive web applications with the help of XML, HTML, CSS and Java Script.
+AJAX is web browser ytechnology independent of web server software.
+
+API :-
+its stands for Application Programming Interface.
