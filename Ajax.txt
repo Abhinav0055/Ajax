@@ -1,0 +1,3 @@
+AJAX :-
+It stands for Asynchronous Javascript and XML. 
+AJAX is a new technique ofr creating better, faster and more interactive web applications with the help of XML, HTML, CSS and Java Script.
