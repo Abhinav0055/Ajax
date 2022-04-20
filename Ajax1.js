@@ -8,7 +8,7 @@ function buttonClickHandler() {
     const xhr = new XMLHttpRequest();
     // Open Request
 
-    xhr.open('GET', "http://dummy.restapiexample.com/api/v1/create", true);
+    xhr.open('POST', "http://dummy.restapiexample.com/api/v1/create", true);
     xhr.getResponseHeader('Content-Type','application/json');
     // when response is ready to deliver from server to client
     xhr.onprogress = function () {
