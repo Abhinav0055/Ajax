@@ -14,6 +14,10 @@ function buttonClickHandler(){
         console.log("in progress....");
     }
 
+    xhr.onreadystatechange=function(){
+        console.log("ready state is", xhr.readyState);
+    }
+
     xhr.onload = function(){
         if (this.status=== 200){
             console.log(this.responseText);
@@ -25,3 +29,10 @@ function buttonClickHandler(){
     // send the request to the server
     xhr.send();
 }
+// Illutration of on ready state change functions
+
+// 0 UNSENT - Client has been created open() not called yet
+// 1 OPENED - open() has been called 
+// 2 HEADERS_RECEIVED - send() has been called and headers and statusare available
+// 3 LOADING - Downloading responseText holds partial data
+// 4 DONE - the operation is completed
