@@ -8,8 +8,8 @@ function buttonClickHandler() {
     const xhr = new XMLHttpRequest();
     // Open Request
 
-    xhr.open('POST', "http://dummy.restapiexample.com/api/v1/create", true);
-    xhr.getResponseHeader('Content-Type','application/json');
+    xhr.open('GET', "Ajax3.json", true);
+    //xhr.getResponseHeader('Content-Type','application/json');
     // when response is ready to deliver from server to client
     xhr.onprogress = function () {
         console.log("in progress....");
@@ -24,22 +24,26 @@ function buttonClickHandler() {
             let obj = JSON.parse(this.responseText);
             console.log(obj);
 
-          //  let lst = document.getElementsById("list");
-           // str = "";
-           // for (key in obj.data) {
-             //   str += `<li>$(obj.data[key].employee_name)</li>`;
+           let lst = document.getElementById("list");
+            str = "";
+           for (key in obj.Employees) {
+              str += `<li>$(obj.Employees[0].age)</li>`;
 
 
-           // }
-           // lst.innerHTML = str;
+           }
+           lst.innerHTML = str;
         }
 
         else {
             console.error("Some Error occured");
         }
     }
-    // send the request to the server
     xhr.send();
+    console.log("fetching data from the server is completed");
+    // send the request to the server
+    //prmtrs = `{"name":"Ram","salary":"12000","age" : "25"}`;
+   // xhr.send(prmtrs);
+   // console.log("work done!");
 }
 // Illutration of on ready state change functions
 
