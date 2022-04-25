@@ -24,22 +24,27 @@ function buttonClickHandler() {
             let obj = JSON.parse(this.responseText);
             console.log(obj);
 
-           let lst = document.getElementById("list");
-            str = "";
-           for (key in obj.Employees) {
-              str += `<li>$(obj.Employees[0].age)</li>`;
+            let lst = document.getElementById("list");
+            var str = "";
+            for (key in obj.Employees) {
+                if (obj.Employees[key].salary > 10000) {
+                    str += `<li>` + (obj.Employees[key].name) + `</li>`;
+                    str += `<li>` + (obj.Employees[key].age) + `</li>`;
+                }
+                else {
+                    console.error("Some Error occured");
+                
+            }
 
 
-           }
-           lst.innerHTML = str;
         }
-
-        else {
-            console.error("Some Error occured");
-        }
+        lst.innerHTML = str;
     }
-    xhr.send();
-    console.log("fetching data from the server is completed");
+
+        
+    }
+xhr.send();
+console.log("fetching data from the server is completed");
     // send the request to the server
     //prmtrs = `{"name":"Ram","salary":"12000","age" : "25"}`;
    // xhr.send(prmtrs);
