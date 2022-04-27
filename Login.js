@@ -8,7 +8,7 @@ function buttonClickHandler() {
     const xhr = new XMLHttpRequest();
     // Open Request
 
-    xhr.open('GET', "Ajax3.json", true);
+    xhr.open('GET', "Login.json", true);
     //xhr.getResponseHeader('Content-Type','application/json');
     // when response is ready to deliver from server to client
     xhr.onprogress = function () {
@@ -24,31 +24,34 @@ function buttonClickHandler() {
             let obj = JSON.parse(this.responseText);
             console.log(obj);
 
-            let lst = document.getElementById("list");
-            var str = "";
+            let user = document.getElementById("u1").value;
+            let pass = document.getElementById("p1").value;
             for (key in obj.Employees) {
-                if (obj.Employees[key].salary > 10000) {
-                    str += `<li>` + (obj.Employees[key].name) + "-" + (obj.Employees[key].age) +`</li>`;
+                if (obj.Employees[key].username == user && obj.Employees[key].password == pass) {
+                    console.log("Login is Succesfull");
+                    break;
+
                 }
-                else {
-                    console.error("Some Error occured");
-                
+
+              
+            
+
+
             }
-
-
+            if (obj.Employees[key].username !== user && obj.Employees[key].password !== pass) {
+                console.log("Login is Unsuccesfull");}
         }
-        lst.innerHTML = str;
-    }
-
         
     }
-xhr.send();
-console.log("fetching data from the server is completed");
+
+    xhr.send();
+}
+
     // send the request to the server
     //prmtrs = `{"name":"Ram","salary":"12000","age" : "25"}`;
    // xhr.send(prmtrs);
    // console.log("work done!");
-}
+
 // Illutration of on ready state change functions
 
 // 0 UNSENT - Client has been created open() not called yet
