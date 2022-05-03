@@ -30,16 +30,11 @@ function buttonClickHandler() {
                 if (obj.Employees[key].username == user && obj.Employees[key].password == pass) {
                     console.log("Login is Succesfull");
                     break;
-
                 }
-
-              
-            
-
-
             }
             if (obj.Employees[key].username !== user && obj.Employees[key].password !== pass) {
                 console.log("Login is Unsuccesfull");}
+                
         }
         
     }
